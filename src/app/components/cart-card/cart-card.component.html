@@ -1,0 +1,51 @@
+<div class="min-w-screen flex items-center justify-center px-5 py-5">
+  <div
+    class="bg-indigo-500 text-white rounded shadow-xl py-5 px-5 w-full lg:w-10/12 xl:w-3/4"
+  >
+    <div class="flex flex-wrap -mx-3 items-center">
+      <div class="w-1/4 px-3 text-center hidden md:block">
+        <div class="p-5 xl:px-8 md:py-5">
+          <img src="{{ image }}" alt="{{ title }}" />
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 md:w-2/4 px-3 text-left">
+        <div class="p-5 xl:px-8 md:py-5">
+          <h5 class="font-thin text-sm uppercase">
+            {{ category || "Unknown genre" }}
+          </h5>
+          <h3 class="text-2xl">{{ title || "unknown title" }}</h3>
+          <h5 class="text-xl mb-3">{{ author || "unknown author" }}</h5>
+          <p class="text-sm text-indigo-200">
+            {{ description || "unknown description" }}
+          </p>
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 md:w-1/4 px-3 text-center">
+        <div class="p-5 xl:px-8 md:py-5">
+          <button
+            class="w-full py-2 px-4 rounded text-white bg-yellow-500 hover:bg-white hover:text-yellow-500 focus:outline-none transition duration-150 ease-in-out"
+            (click)="doIncrement(title)"
+          >
+            <fa-icon [icon]="plus"></fa-icon>
+          </button>
+          <div class="mt-2 mb-2 items-center my-auto">
+            &#8377; {{ price || "unknown price" }}.00 * {{ quantity }} = &#8377;
+            {{ total }}
+          </div>
+          <button
+            class="w-full mt-2 py-2 px-4 rounded text-white bg-yellow-500 hover:bg-white hover:text-yellow-500 focus:outline-none transition duration-150 ease-in-out"
+            (click)="doDecrement(title)"
+          >
+            <fa-icon [icon]="minus"></fa-icon>
+          </button>
+          <button
+            class="w-full mt-2 py-2 px-4 rounded text-white bg-red-500 hover:bg-black hover:text-red-500 focus:outline-none transition duration-150 ease-in-out"
+            (click)="doDelete(title)"
+          >
+            <fa-icon [icon]="delete"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
