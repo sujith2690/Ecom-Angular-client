@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class LibraryService {
   constructor(private http: HttpClient) {}
 
-  // private server: string = 'https://libestorary.onrender.com/book/';
-  private server: string = 'http://localhost:5001/book/';
+  // private server: string = 'http://localhost:5001/book/';
+  private server: string = 'https://ecom-angular-server.onrender.com/book/';
 
   allBooks(): Observable<any> {
     return this.http.get(`${this.server}`);

@@ -7,10 +7,10 @@ import { UserRegister, UserLogin } from '../../models/userModel';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  private server: string = 'http://localhost:5001/user/';
-  // private server: string = 'https://libestorary.onrender.com/user/';
+  // private server: string = 'http://localhost:5001/user/';
+  private server: string = 'https://ecom-angular-server.onrender.com/user/';
 
   doLogin(user: UserLogin): Observable<{ token?: string; message: string }> {
     const url = `${this.server}login`;
